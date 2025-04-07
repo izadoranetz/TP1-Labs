@@ -32,7 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="dominio.cpp" />
+		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>

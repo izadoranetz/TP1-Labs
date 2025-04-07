@@ -5,16 +5,23 @@ using namespace std;
 
 int main()
 {
-    CodigoCliente a;
+    CodigoCliente *ptra;
 
-    if(a.setValor(3))
-        cout<<"Valor = "<<a.getValor()<<endl;
+    ptra = new CodigoCliente();
+
+    if(ptra->setValor(3))
+        cout <<"Valor = " << ptra->getValor() <<endl;
     else
-        cout<<"Valor invalido"<<endl;
-    if(a.setValor(30))
-        cout<<"Valor = "<<a.getValor()<<endl;
+        cout << "Valor invalido" <<endl;
+    if(ptra->setValor(30))
+        cout << "Valor = " << ptra->getValor() <<endl;
     else
     cout<<"Valor invalido"<<endl;
+
+    delete ptra;
+
     return 0;
 
 }
+
+
