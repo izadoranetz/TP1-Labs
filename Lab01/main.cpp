@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+    // testando a classe CodigoCliente
     CodigoCliente *ptra;
 
     ptra = new CodigoCliente();
