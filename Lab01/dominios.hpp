@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class codigoCliente {
+class CodigoCliente {
     private:
         static const int LIMITE = 5;
         static const int DEFAULT = 0;
@@ -15,7 +15,7 @@ class codigoCliente {
 
 };
 
-inline int codigoCliente::getValor(){
+inline int CodigoCliente::getValor(){
     return valor;
 };
 
