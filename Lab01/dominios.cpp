@@ -1,5 +1,6 @@
 #include "dominios.hpp"
 #include <algorithm>
+#include <regex>
 
 bool CodigoCliente::validar(int valor){
 if(valor>LIMITE)
@@ -51,15 +52,27 @@ return cpf;
 }
 
 
-bool Perfill::validar(const std::string& perfil){
-if (!validar(perfil))
-    return false;
-this->perfil = perfil;
-return true;
+void Profile::setProfile(string profile) {
+    static const regex pattern("^(conservador|moderado|agressivo)$");
+    if(!regex_match(profile, pattern)) {
+        throw invalid_argument("Perfil inválido. Deve ser 'conservador', 'moderado' ou 'agressivo'.");
+    }
+
+    if (profile == "conservador") {
+        this->profile = conservador;
+    } else if (profile == "moderado") {
+        this->profile = moderado;
+    } else {
+        this->profile = agressivo;
+    }
 }
 
-bool Perfil::setPerfil(const std::string& perfil) {
-    // iniciar array puxando a lista de perfis
-    // Perfis array[3];
-    // Perfis *perfis = std::find(std::begin(array)
-};
+string Profile::getProfile() {
+    switch(profile) {
+        case conservador: return "conservador";
+        case moderado: return "moderado";
+        case agressivo: return "agressivo";
+        default: return "";
+    }
+}
+

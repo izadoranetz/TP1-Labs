@@ -28,19 +28,41 @@ int main()
     if(meuCpf->setCpf("12345678900")) {
         cout << "CPF valido: " << meuCpf->getCpf() << endl;
     } else {
-        cout << "CPF inválido: " << meuCpf->getCpf() << endl;
+        cout << "CPF invalido: " << meuCpf->getCpf() << endl;
     }
 
     //cpf invalido
     if(meuCpf->setCpf("123abc45678")) {
-        cout << "CPF válido: " << meuCpf->getCpf() << endl;
+        cout << "CPF valido: " << meuCpf->getCpf() << endl;
     } else {
         cout << "CPF invalido: " << meuCpf->getCpf() << endl;
     }
 
-    // to do implementar erros com lançamento de exceção
-
     delete meuCpf;
+
+    // Criando como objeto (recomendado para casos simples)
+    Profile perfil;
+
+    try {
+        perfil.setProfile("moderado");
+        cout << "Perfil definido: " << perfil.getProfile() << endl;
+
+        perfil.setProfile("invalido"); // Isso lançará exceção
+    } catch (const invalid_argument& e) {
+        cout << "Erro: " << e.what() << endl;
+    }
+
+    // Ou criando como ponteiro (se necessário)
+    Profile* ptrPerfil = new Profile();
+    try {
+        ptrPerfil->setProfile("agressivo");
+        cout << "Perfil definido: " << ptrPerfil->getProfile() << endl;
+    } catch (...) {
+        delete ptrPerfil;
+        throw;
+    }
+    delete ptrPerfil;
+
 
     return 0;
 

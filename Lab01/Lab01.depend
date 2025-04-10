@@ -1,13 +1,14 @@
 # depslib dependency file v1.0
-1744057008 source:c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\main.cpp
+1744319534 source:c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\main.cpp
 	<iostream>
 	"dominios.hpp"
 
-1744110093 source:c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\dominios.cpp
+1744320061 source:c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\dominios.cpp
 	"dominios.hpp"
 	<algorithm>
+	<regex>
 
-1744110084 c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\dominios.hpp
+1744319694 c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\dominios.hpp
 	<string>
 
 1744119580 source:e:\2025-1\lab01\dominios.cpp
