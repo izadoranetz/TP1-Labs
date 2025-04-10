@@ -10,3 +10,14 @@
 1744110084 c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\dominios.hpp
 	<string>
 
+1744119580 source:e:\2025-1\lab01\dominios.cpp
+	"dominios.hpp"
+	<algorithm>
+
+1744120112 e:\2025-1\lab01\dominios.hpp
+	<string>
+
+1744118008 source:e:\2025-1\lab01\main.cpp
+	<iostream>
+	"dominios.hpp"
+

@@ -17,50 +17,23 @@ return true;
 
 bool Cpf::validar(const std::string& cpf){
 // verifica tamanho de 11 digitos
+// incluir verificacao se cpf nao eh composto de numeros repetidos
 if(cpf.length() != 11 ||
    !std::all_of(cpf.begin(), cpf.end(), ::isdigit)) {
     return false;
 }
+// transformar a string em um array de numeros
 
-// TODO: Implementar validação dos dígitos verificadores
-// (Algoritmo oficial de validação de CPF)
-// exemplo em javascript:
-// function validarCPF(cpf) {
-//	cpf = cpf.replace(/[^\d]+/g,'');
-//	if(cpf == '') return false;
-	// Elimina CPFs invalidos conhecidos
-//	if (cpf.length != 11 ||
-//		cpf == "00000000000" ||
-//		cpf == "11111111111" ||
-//		cpf == "22222222222" ||
-//		cpf == "33333333333" ||
-//		cpf == "44444444444" ||
-//		cpf == "55555555555" ||
-//		cpf == "66666666666" ||
-//		cpf == "77777777777" ||
-//		cpf == "88888888888" ||
-//		cpf == "99999999999")
-//			return false;
-	// Valida 1o digito
-//	add = 0;
-//	for (i=0; i < 9; i ++)
-//		add += parseInt(cpf.charAt(i)) * (10 - i);
-//		rev = 11 - (add % 11);
-//		if (rev == 10 || rev == 11)
-//			rev = 0;
-//		if (rev != parseInt(cpf.charAt(9)))
-//			return false;
-	// Valida 2o digito
-//	add = 0;
-//	for (i = 0; i < 10; i ++)
-//		add += parseInt(cpf.charAt(i)) * (11 - i);
-//	rev = 11 - (add % 11);
-//	if (rev == 10 || rev == 11)
-//		rev = 0;
-//	if (rev != parseInt(cpf.charAt(10)))
-//		return false;
-//	return true;
-//}
+// verifica o primeiro digito
+// separar os 9 primeiros digitos
+// multiplicar cada um dos numeros, da direita para esquerda, por numeros crescentes a partir do numero do
+// pegar o resultado e dividir por 11
+// se o resto da divisao for menor que 2, o digito 1 é igual a zero
+// se o resto da divisao for maior ou igual a 2, entao o digito é igual a 11 - resto
+
+// verifica o segundo digito
+//
+
 
 return true;
 
@@ -76,3 +49,17 @@ return true;
 std::string Cpf::getCpf() const {
 return cpf;
 }
+
+
+bool Perfill::validar(const std::string& perfil){
+if (!validar(perfil))
+    return false;
+this->perfil = perfil;
+return true;
+}
+
+bool Perfil::setPerfil(const std::string& perfil) {
+    // iniciar array puxando a lista de perfis
+    // Perfis array[3];
+    // Perfis *perfis = std::find(std::begin(array)
+};

@@ -38,6 +38,8 @@ int main()
         cout << "CPF invalido: " << meuCpf->getCpf() << endl;
     }
 
+    // to do implementar erros com lançamento de exceção
+
     delete meuCpf;
 
     return 0;

@@ -30,4 +30,16 @@ public:
     std::string getCpf() const;
 };
 
+class Perfil {
+private:
+    // to do transformar em enum
+    const char* perfis[3] = { "conservador", "moderado", "agressivo"}; // perfis aceitos
+    std::string perfil;
+    bool validar(const std::string& perfil)
+public:
+    bool setPerfil(const std::string& perfil);
+};
+
+
+
 #endif // DOMINIOS_HPP_INCLUDED
