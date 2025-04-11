@@ -21,7 +21,10 @@ int main()
     delete ptra;
 
     // Testes de CPFs validos
-    testCpf("52998224725");  // CPF valido
+    testCpf("11144477735");
+    testCpf("52998224725");
+    testCpf("12345678909");
+    testCpf("86446422784");
 
     // Testes de CPFs invalidos
     testCpf("00000000000");  // todos dígitos iguais
