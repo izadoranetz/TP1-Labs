@@ -23,11 +23,11 @@ inline int CodigoCliente::getValor(){
 
 class Cpf {
 private:
-    std::string cpf; //usa-se string porque o cpf pode iniciar com zeros
-    bool validar(const std::string& cpf);
+    string cpf;
+    bool validar(const string& cpf);
 public:
-    bool setCpf(const std::string& cpf);
-    std::string getCpf() const;
+    void setCpf(const string& cpf);
+    string getCpf() const;
 };
 
 class Profile{

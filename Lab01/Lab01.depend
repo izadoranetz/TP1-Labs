@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1744319534 source:c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\main.cpp
+1744320105 source:c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\main.cpp
 	<iostream>
 	"dominios.hpp"
 
@@ -8,7 +8,7 @@
 	<algorithm>
 	<regex>
 
-1744319694 c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\dominios.hpp
+1744321719 c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\dominios.hpp
 	<string>
 
 1744119580 source:e:\2025-1\lab01\dominios.cpp
