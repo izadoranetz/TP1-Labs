@@ -35,7 +35,6 @@ bool Cpf::validateCpf(string cpf){
     return false;
 }
 
-
 // transformar a string em um array de numeros
 
 // verifica o primeiro digito
@@ -46,6 +45,9 @@ bool Cpf::validateCpf(string cpf){
 // se o resto da divisao for maior ou igual a 2, entao o digito é igual a 11 - resto
 
 // verifica o segundo digito
+
+
+
 return true;
 
 }

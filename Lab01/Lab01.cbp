@@ -35,6 +35,8 @@
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="tests.cpp" />
+		<Unit filename="tests.hpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
