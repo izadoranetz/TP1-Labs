@@ -36,7 +36,7 @@ bool Cpf::validateCpf(string cpf){
     }
 
     // array dos digitos do cpf
-    array<int, 11> digits;
+    std::array<int, 11> digits;
     for (size_t i = 0; i < cpf.length(); i++) {
         digits[i] = cpf[i] - '0';
     }
