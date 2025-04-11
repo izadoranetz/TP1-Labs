@@ -16,13 +16,26 @@ return true;
 }
 
 
-bool Cpf::validar(const std::string& cpf){
-// verifica tamanho de 11 digitos
-// incluir verificacao se cpf nao eh composto de numeros repetidos
-if(cpf.length() != 11 ||
-   !std::all_of(cpf.begin(), cpf.end(), ::isdigit)) {
+/**
+ * @brief Valida o CPF informado.
+ * @param cpf CPF a ser validado conforme a norma oficial.
+ * @throw std::invalid_argument Se o CPF for inválido.
+ */
+
+bool Cpf::validateCpf(string cpf){
+
+    // verifica se tem 11 digitos
+    if(cpf.length() != 11 ||
+       !std::all_of(cpf.begin(), cpf.end(), ::isdigit)) {
+        return false;
+    }
+
+    // verifica se todos caracteres sao iguais
+    if (cpf.find_first_not_of(cpf[0]) == std::string::npos) {
     return false;
 }
+
+
 // transformar a string em um array de numeros
 
 // verifica o primeiro digito
@@ -33,23 +46,32 @@ if(cpf.length() != 11 ||
 // se o resto da divisao for maior ou igual a 2, entao o digito é igual a 11 - resto
 
 // verifica o segundo digito
-//
-
-
 return true;
 
 }
 
-bool Cpf::setCpf(const std::string& cpf){
-if (!validar(cpf))
-    return false;
-this->cpf = cpf;
-return true;
+/**
+ * @brief Define o CPF após validação.
+ * @param cpf CPF a ser validado (formato "XXX.XXX.XXX-XX", seguindo norma oficial do CPF).
+ * @throw std::invalid_argument Se o CPF for inválido.
+ */
+
+void Cpf::setCpf(string cpf) {
+    if(!validateCpf(cpf)) {
+        throw invalid_argument("Cpf invalido");
+    }
+    this->cpf = cpf;
 }
 
-std::string Cpf::getCpf() const {
-return cpf;
+/**
+ * @brief Retorna o CPF armazenado.
+ * @return std::string CPF no formato "XXX.XXX.XXX-XX".
+ */
+
+string Cpf::getCpf() {
+    return cpf;
 }
+
 
 
 void Profile::setProfile(string profile) {

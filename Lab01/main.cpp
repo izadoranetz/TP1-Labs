@@ -1,5 +1,6 @@
 #include <iostream>
 #include "dominios.hpp"
+#include "tests.hpp"
 
 using namespace std;
 
@@ -9,7 +10,6 @@ int main()
     CodigoCliente *ptra;
 
     ptra = new CodigoCliente();
-
     if(ptra->setValor(3))
         cout <<"Valor = " << ptra->getValor() <<endl;
     else
@@ -18,50 +18,30 @@ int main()
         cout << "Valor = " << ptra->getValor() <<endl;
     else
     cout<<"Valor invalido"<<endl;
-
     delete ptra;
 
-    // testando a classe CPF
-    Cpf *meuCpf = new Cpf();
+    // Testes de CPFs validos
+    testCpf("52998224725");  // CPF valido
 
-    //cpf valido
-    if(meuCpf->setCpf("12345678900")) {
-        cout << "CPF valido: " << meuCpf->getCpf() << endl;
-    } else {
-        cout << "CPF invalido: " << meuCpf->getCpf() << endl;
-    }
+    // Testes de CPFs invalidos
+    testCpf("00000000000");  // todos dígitos iguais
+    testCpf("12345678901");  // invalido (digitos verificadores incorretos)
+    testCpf("123");          // Muito curto
+    testCpf("1234567890123"); // Muito longo
+    testCpf("ABC12345678");  // Caracteres não numéricos
+    testCpf("52998224724");  // Dígito verificador incorreto
+    testCpf("");             // String vazia
 
-    //cpf invalido
-    if(meuCpf->setCpf("123abc45678")) {
-        cout << "CPF valido: " << meuCpf->getCpf() << endl;
-    } else {
-        cout << "CPF invalido: " << meuCpf->getCpf() << endl;
-    }
 
-    delete meuCpf;
-
-    // Criando como objeto (recomendado para casos simples)
     Profile perfil;
-
     try {
         perfil.setProfile("moderado");
         cout << "Perfil definido: " << perfil.getProfile() << endl;
-
-        perfil.setProfile("invalido"); // Isso lançará exceção
+        perfil.setProfile("invalido");
     } catch (const invalid_argument& e) {
         cout << "Erro: " << e.what() << endl;
     }
 
-    // Ou criando como ponteiro (se necessário)
-    Profile* ptrPerfil = new Profile();
-    try {
-        ptrPerfil->setProfile("agressivo");
-        cout << "Perfil definido: " << ptrPerfil->getProfile() << endl;
-    } catch (...) {
-        delete ptrPerfil;
-        throw;
-    }
-    delete ptrPerfil;
 
 
     return 0;

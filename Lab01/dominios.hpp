@@ -24,10 +24,10 @@ inline int CodigoCliente::getValor(){
 class Cpf {
 private:
     string cpf;
-    bool validar(const string& cpf);
+    static bool validateCpf(string cpf);
 public:
-    void setCpf(const string& cpf);
-    string getCpf() const;
+    void setCpf(string cpf);
+    string getCpf();
 };
 
 class Profile{
