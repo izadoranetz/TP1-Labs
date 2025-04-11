@@ -24,7 +24,7 @@ inline int CodigoCliente::getValor(){
 class Cpf {
 private:
     string cpf;
-    static bool validateCpf(string cpf);
+    bool validateCpf(string cpf);
 public:
     void setCpf(string cpf);
     string getCpf();

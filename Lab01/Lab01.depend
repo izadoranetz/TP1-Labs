@@ -9,7 +9,7 @@
 	<algorithm>
 	<regex>
 
-1744332608 c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\dominios.hpp
+1744335253 c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\dominios.hpp
 	<string>
 
 1744119580 source:e:\2025-1\lab01\dominios.cpp
@@ -23,7 +23,7 @@
 	<iostream>
 	"dominios.hpp"
 
-1744334924 source:c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\tests.cpp
+1744335146 source:c:\users\izado\onedrive\documentos\github\tp1\labs\tp1-labs\lab01\tests.cpp
 	"tests.hpp"
 	<iostream>
 	<stdexcept>
