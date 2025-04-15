@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1744725442 source:c:\users\aluno\documents\tp1\lab02\main.cpp
+	<iostream>
+	"entidades.hpp"
+
+1744724265 source:c:\users\aluno\documents\tp1\lab02\dominios.cpp
+	"dominios.hpp"
+
+1744723824 c:\users\aluno\documents\tp1\lab02\dominios.hpp
+
+1744724628 c:\users\aluno\documents\tp1\lab02\entidades.hpp
+	"dominios.hpp"
+
