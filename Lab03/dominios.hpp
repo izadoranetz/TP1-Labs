@@ -1,18 +1,22 @@
-#ifndef DOMINIOS_HPP_INCLUDE
-#define DOMINIOS_HPP_INCLUDE
+#ifndef DOMINIOS_HPP_INCLUDED
+#define DOMINIOS_HPP_INCLUDED
 
 class Codigo {
     private:
-        string valor;
-        virtual bool validar(string) = 0;
+        int valor;
+        virtual bool validar(int) = 0;
     public:
-        bool setValor(string);
-        string getValor() const;
+        bool setValor(int);
+        int getValor() const;
 };
 
-inline string Codigo::getValor() const {
+inline int Codigo::getValor() const {
     return valor;
 }
 
+class CodigoCliente:public Codigo {
+    private:
+        bool validar(int) override;
+};
 
-#endif DOMINIOS_HPP_INCLUDE
+#endif // DOMINIOS_HPP_INCLUDED
