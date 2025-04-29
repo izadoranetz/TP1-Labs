@@ -1,3 +1,5 @@
+// refatorar código para uso de hierarquia de classes
+
 #include <iostream>
 #include "dominios.hpp"
 
