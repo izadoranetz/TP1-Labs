@@ -25,7 +25,7 @@ void Dominio::setValor(string valor){
  */
 
 bool Cpf::checkCpf(string cpf){
-
+    
     // verifica se tem 11 digitos
     if(cpf.length() != 11 ||
        !std::all_of(cpf.begin(), cpf.end(), ::isdigit)) {
@@ -43,17 +43,20 @@ bool Cpf::checkCpf(string cpf){
         digits[i] = cpf[i] - '0';
     }
 
-    // verifica o primeiro digito
-    // multiplica os 9 primeiros digitos, da direita para esquerda, por numeros crescentes a partir de 2
+    /* verifica o primeiro digito
+    * multiplica os 9 primeiros digitos, da direita para esquerda, por numeros crescentes a partir de 2
+    */
     int weight = 10;
     int sum = 0;
     for (size_t i = 0; i < 9; i++){
         sum += (digits[i]*weight);
         weight--;
     }
-    // pega o resultado e divide por 11
-    // se o resto da divisao for menor que 2, o digito eh igual a zero
-    // se o resto da divisao for maior ou igual a 2, entao o digito eh igual a 11 - resto
+
+    /* pega o resultado e divide por 11
+    * se o resto da divisao for menor que 2, o digito eh igual a zero
+    * se o resto da divisao for maior ou igual a 2, entao o digito eh igual a 11 - resto
+    */
     int rem = sum % 11;
     int first_digit;
     if(rem < 2){
@@ -88,6 +91,9 @@ bool Cpf::checkCpf(string cpf){
 return true;
 
 }
+
+// adaptar o checkCpf para retornar void, usando try catch
+
 
 /**
  * @brief Define o CPF após validação.
