@@ -38,5 +38,12 @@ int main() {
         cout << "Excecao desconhecida" << endl;
     }
 
+
+    Profile perfil;
+    perfil.setProfile("conservador");
+    cout << "Perfil definido: " << perfil.getProfile() << endl;
+    perfil.setProfile("agressivo");
+    cout << "Perfil definido: " << perfil.getProfile() << endl;
+
     return 0;
 }
