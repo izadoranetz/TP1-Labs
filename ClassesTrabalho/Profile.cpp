@@ -2,7 +2,12 @@
 #include <array>
 #include <regex>
 
-// Profile
+/**
+ * @brief Verifica se o perfil do investimento é válido a partir da relação de perfis possíveis.
+ * @param profile Perfil a ser validado ( Conservador, Moderado, Agressivo ).
+ * @return true Se o perfil for válido.
+ * @return false Se o perfil for inválido.
+ */
 
 bool Profile::checkProfile(string profile) {
     static const regex pattern("^(conservador|moderado|agressivo)$");
@@ -10,8 +15,8 @@ bool Profile::checkProfile(string profile) {
 }
 
 /**
- * @brief Define o perfil do investimento.
- * @param profile Perfil a ser validado ( Conservador, Moderado, Agressivo ).
+ * @brief Define o perfil do investimento após a validação do perfil informado.
+ * @param profile Perfil a ser definido.
  * @throw std::invalid_argument Se o perfil for inválido.
  */
 
@@ -29,7 +34,12 @@ bool Profile::checkProfile(string profile) {
   }
 }
 
-// método identifyProfile para identificar o perfil correspondente do enum, para ser acionada pelo getProfile
+/** 
+ * @brief Retorna a string correspondente ao perfil do investimento selecionado.
+ * @param profile Perfil a ser identificado ( Conservador, Moderado, Agressivo ).
+ * @return string Nome do perfil correspondente.
+*/
+
 string Profile::identifyProfile(Profile::profile_options profile) const {
     switch (profile) {
         case conservador: return "conservador";

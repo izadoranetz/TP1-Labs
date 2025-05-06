@@ -2,11 +2,10 @@
 #include <array>
 #include <regex>
 
-// CPF
 
 /**
- * @brief Verifica CPF informado, conforme regras oficiais.
- * @param cpf CPF a ser validado.
+ * @brief Verifica CPF informado, conforme regras oficiais de cálculo do primeiro e segundo dígitos verificadores.
+ * @param cpf CPF informado que será validado.
  * @throw std::invalid_argument Se o CPF for inválido.
  */
 
@@ -77,8 +76,6 @@
 return true;
 
 }
-
-// adaptar o checkCpf para retornar void, usando try catch
 
 
 /**
