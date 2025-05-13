@@ -1,3 +1,6 @@
+#ifndef ENTIDADES_HPP_INCLUDED
+#define ENTIDADES_HPP_INCLUDED
+
 #include "dominios.hpp"
 
 class Wallet{
@@ -32,3 +35,5 @@ inline void Wallet::setProfile(Profile profile){
 inline Profile Wallet::getProfile(){
     return profile;
 }
+
+#endif // ENTIDADES_HPP_INCLUDED

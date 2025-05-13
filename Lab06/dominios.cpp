@@ -28,13 +28,13 @@ void Dominio::setValor(string valor){
     
     // verifica se tem 11 digitos
     if(cpf.length() != 11 ||
-       !std::all_of(cpf.begin(), cpf.end(), ::isdigit)) {
-        return false;
+        !std::all_of(cpf.begin(), cpf.end(), ::isdigit)) {
+        throw invalid_argument("CPF não possui 11 dígitos.");
     }
 
     // verifica se todos caracteres sao iguais
     if (cpf.find_first_not_of(cpf[0]) == std::string::npos) {
-    return false;
+        throw invalid_argument("CPF possui todos os digitos iguais.");
     }
 
     // array dos digitos do cpf
@@ -66,7 +66,7 @@ void Dominio::setValor(string valor){
     }
 
     if(first_digit != digits[9]){
-        return false;
+        throw invalid_argument("Primeiro dígito verificado do cpf é inválido.");
     }
 
     // verifica o segundo digito, com calculo igual ao anterior, mas incluindo o primeiro digito
@@ -85,7 +85,7 @@ void Dominio::setValor(string valor){
     }
 
     if(second_digit != digits[10]){
-        return false;
+        throw invalid_argument("Segundo dígito verificado do cpf é inválido.");
     }
 
 return true;
@@ -111,6 +111,54 @@ bool Code::checkCode(string code) {
     return regex_match(code, code_regex);
 }
 
+
+/**
+ * @brief Verifica se o perfil do investimento é válido a partir da relação de perfis possíveis.
+ * @param profile Perfil a ser validado ( Conservador, Moderado, Agressivo ).
+ * @return true Se o perfil for válido.
+ * @return false Se o perfil for inválido.
+ */
+
+ bool Profile::checkProfile(string profile) {
+    static const regex pattern("^(conservador|moderado|agressivo)$");
+    return regex_match(profile, pattern);
+}
+
+/**
+ * @brief Define o perfil do investimento após a validação do perfil informado.
+ * @param profile Perfil a ser definido.
+ * @throw std::invalid_argument Se o perfil for inválido.
+ */
+
+ void Profile::setProfile(string profile) {
+  if(!checkProfile(profile)) {
+      throw invalid_argument("Perfil inválido. Deve ser 'conservador', 'moderado' ou 'agressivo'.");
+  }
+
+  if (profile == "conservador") {
+      this->profile = conservador;
+  } else if (profile == "moderado") {
+      this->profile = moderado;
+  } else {
+      this->profile = agressivo;
+  }
+}
+
+/** 
+ * @brief Retorna a string correspondente ao perfil do investimento selecionado.
+ * @param profile Perfil a ser identificado ( Conservador, Moderado, Agressivo ).
+ * @return string Nome do perfil correspondente.
+*/
+
+string Profile::identifyProfile(Profile::profile_options profile) const {
+    switch (profile) {
+        case conservador: return "conservador";
+        case moderado: return "moderado";
+        case agressivo: return "agressivo";
+        default: return "perfil desconhecido";
+    }
+}
+
 /**
 * @brief Define o valor do código.
 * @param code Código a ser validado (formato "XXXXX", onde X é dígito).
@@ -124,7 +172,7 @@ void Code::setCode(string code) {
     this->code = code; 
 }
 
-bool checkName(string name) {
+bool Name::checkName(string name) {
     static const regex name_regex("^[A-Za-z0-9](?:[A-Za-z0-9]| (?=\\S)){0,19}$");
     return regex_match(name, regex(name_regex));
 }
